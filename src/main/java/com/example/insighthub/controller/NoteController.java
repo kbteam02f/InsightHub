@@ -1,6 +1,5 @@
 package com.example.insighthub.controller;
 
-import com.example.insighthub.markdown.service.MarkdownService;
 import com.example.insighthub.model.Note;
 import com.example.insighthub.service.NoteService;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Objects;
 
 @RequiredArgsConstructor
 @RestController
@@ -16,7 +14,6 @@ import java.util.Objects;
 public class NoteController {
 
     private final NoteService noteService;
-    private final MarkdownService markdownService;
 
     @GetMapping
     public List<Note> getNotes() {
@@ -39,15 +36,6 @@ public class NoteController {
         return noteService.deleteNote(id)
                 ? ResponseEntity.ok(null)
                 : ResponseEntity.notFound().build();
-    }
-
-    @GetMapping("/render/{id}")
-    public String renderMarkdown(@PathVariable String id) {
-        Note note = noteService.getNoteById(id);
-        if (Objects.nonNull(note)) {
-            return markdownService.render(note);
-        }
-        return null;
     }
 
 

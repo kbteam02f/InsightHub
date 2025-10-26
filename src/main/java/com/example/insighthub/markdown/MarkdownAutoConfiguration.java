@@ -1,8 +1,9 @@
 package com.example.insighthub.markdown;
 
-import com.example.insighthub.markdown.service.DefaultMarkdownService;
+import com.example.insighthub.markdown.service.impl.DefaultMarkdownService;
 import com.example.insighthub.markdown.service.MarkdownService;
 import com.example.insighthub.markdown.service.impl.FormatMarkdownService;
+import com.example.insighthub.service.NoteService;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
@@ -13,13 +14,13 @@ public class MarkdownAutoConfiguration {
 
     @Bean
     @ConditionalOnProperty(prefix = "insighthub.markdown", name = "enabled", havingValue = "true")
-    public MarkdownService formatMarkdownService() {
-        return new FormatMarkdownService();
+    public MarkdownService formatMarkdownService(NoteService noteService) {
+        return new FormatMarkdownService(noteService);
     }
     @Bean
     @ConditionalOnMissingBean
-    public MarkdownService defaultMarkdownService() {
-        return new DefaultMarkdownService();
+    public MarkdownService defaultMarkdownService(NoteService noteService) {
+        return new DefaultMarkdownService(noteService);
     }
 
 }

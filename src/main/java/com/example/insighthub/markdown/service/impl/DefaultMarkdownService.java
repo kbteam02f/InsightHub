@@ -8,15 +8,14 @@ import lombok.RequiredArgsConstructor;
 import java.util.Objects;
 
 @RequiredArgsConstructor
-public class FormatMarkdownService implements MarkdownService {
+public class DefaultMarkdownService implements MarkdownService {
     private final NoteService noteService;
-
     @Override
     public String render(String id) {
         Note note = noteService.getNoteById(id);
         if (Objects.isNull(note)) {
             return null;
         }
-        return "<h1>%s</h1>\n<p>%s</p>\n<h3>%s</h3>\n".formatted(note.getTitle(), note.getContent(), note.getAuthor());
+        return note.getTitle().concat(" ").concat(note.getContent()).concat(" ").concat(note.getAuthor());
     }
 }
