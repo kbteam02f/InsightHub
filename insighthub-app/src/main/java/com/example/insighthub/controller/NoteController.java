@@ -1,7 +1,7 @@
 package com.example.insighthub.controller;
 
-import com.example.insighthub.model.Note;
-import com.example.insighthub.service.NoteService;
+import com.example.rendering.model.Note;
+import com.example.rendering.service.NoteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

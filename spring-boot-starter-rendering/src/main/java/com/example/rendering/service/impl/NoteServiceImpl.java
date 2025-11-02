@@ -1,19 +1,17 @@
-package com.example.insighthub.service.impl;
+package com.example.rendering.service.impl;
 
-import com.example.insighthub.markdown.spring.events.NoteCreatedEvent;
-import com.example.insighthub.model.Note;
-import com.example.insighthub.service.NoteService;
+import com.example.rendering.events.NoteCreatedEvent;
+import com.example.rendering.model.Note;
+import com.example.rendering.service.NoteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.IntStream;
 
-@Service
 @RequiredArgsConstructor
 public class NoteServiceImpl implements NoteService, InitializingBean, DisposableBean {
 

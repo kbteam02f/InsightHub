@@ -1,8 +1,8 @@
 package com.example.insighthub.markdown.service.impl;
 
 import com.example.insighthub.markdown.service.MarkdownService;
-import com.example.insighthub.model.Note;
-import com.example.insighthub.service.NoteService;
+import com.example.rendering.model.Note;
+import com.example.rendering.service.NoteService;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Objects;

@@ -1,6 +1,6 @@
-package com.example.insighthub.service;
+package com.example.rendering.service;
 
-import com.example.insighthub.model.Note;
+import com.example.rendering.model.Note;
 
 import java.util.List;
 

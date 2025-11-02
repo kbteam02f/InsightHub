@@ -1,4 +1,4 @@
-package com.example.insighthub.model;
+package com.example.rendering.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

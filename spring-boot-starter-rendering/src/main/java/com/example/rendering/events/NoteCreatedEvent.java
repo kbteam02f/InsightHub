@@ -1,6 +1,6 @@
-package com.example.insighthub.markdown.spring.events;
+package com.example.rendering.events;
 
-import com.example.insighthub.model.Note;
+import com.example.rendering.model.Note;
 import lombok.Getter;
 import org.springframework.context.ApplicationEvent;
 

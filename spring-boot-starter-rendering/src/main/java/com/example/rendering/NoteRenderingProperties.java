@@ -1,4 +1,4 @@
-package com.example.insighthub.config;
+package com.example.rendering;
 
 import lombok.Getter;
 import lombok.Setter;

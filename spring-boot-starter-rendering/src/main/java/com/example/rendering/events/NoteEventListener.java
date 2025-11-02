@@ -1,4 +1,4 @@
-package com.example.insighthub.markdown.spring.events;
+package com.example.rendering.events;
 
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;

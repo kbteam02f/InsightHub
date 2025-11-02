@@ -1,10 +1,10 @@
 package com.example.insighthub.markdown;
 
-import com.example.insighthub.config.NoteRenderingProperties;
+import com.example.rendering.NoteRenderingProperties;
 import com.example.insighthub.markdown.service.MarkdownService;
 import com.example.insighthub.markdown.service.impl.DefaultMarkdownService;
 import com.example.insighthub.markdown.service.impl.FormatMarkdownService;
-import com.example.insighthub.service.NoteService;
+import com.example.rendering.service.NoteService;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
