@@ -7,4 +7,7 @@ spring:
 
 insighthub:
   markdown:
-    enabled: false
+    enabled: true
+  rendering:
+    enabled: true
+    max-length: 2000

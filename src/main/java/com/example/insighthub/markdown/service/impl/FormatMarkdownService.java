@@ -1,5 +1,6 @@
 package com.example.insighthub.markdown.service.impl;
 
+import com.example.insighthub.config.NoteRenderingProperties;
 import com.example.insighthub.markdown.service.MarkdownService;
 import com.example.insighthub.model.Note;
 import com.example.insighthub.service.NoteService;
@@ -10,12 +11,19 @@ import java.util.Objects;
 @RequiredArgsConstructor
 public class FormatMarkdownService implements MarkdownService {
     private final NoteService noteService;
+    private final NoteRenderingProperties props;
 
     @Override
     public String render(String id) {
         Note note = noteService.getNoteById(id);
         if (Objects.isNull(note)) {
             return null;
+        }
+        if (!props.getEnabled()) {
+            return note.getTitle().concat(note.getContent()).concat(note.getAuthor());
+        }
+        if (note.getContent().length() > props.getMaxLength()) {
+            note.setContent(note.getContent().substring(0, props.getMaxLength() - 3).concat("..."));
         }
         return "<h1>%s</h1>\n<p>%s</p>\n<h3>%s</h3>\n".formatted(note.getTitle(), note.getContent(), note.getAuthor());
     }
