@@ -11,7 +11,8 @@
 	<groupId>com.example</groupId>
 	<artifactId>insighthub</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>insighthub</name>
+    <packaging>pom</packaging>
+    <name>insighthub</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -20,7 +21,11 @@
 	<developers>
 		<developer/>
 	</developers>
-	<scm>
+    <modules>
+        <module>insighthub-app</module>
+        <module>spring-boot-starter-rendering</module>
+    </modules>
+    <scm>
 		<connection/>
 		<developerConnection/>
 		<tag/>
@@ -30,11 +35,6 @@
 		<java.version>21</java.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
