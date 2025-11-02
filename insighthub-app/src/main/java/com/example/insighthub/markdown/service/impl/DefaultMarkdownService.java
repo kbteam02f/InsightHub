@@ -16,6 +16,6 @@ public class DefaultMarkdownService implements MarkdownService {
         if (Objects.isNull(note)) {
             return null;
         }
-        return note.getTitle().concat(" ").concat(note.getContent()).concat(" ").concat(note.getAuthor());
+        return note.getTitle().concat("\n").concat(note.getContent()).concat("\n").concat(note.getAuthor());
     }
 }
