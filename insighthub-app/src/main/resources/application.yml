@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: InsightHub
+  data:
+    mongodb:
+      uri: mongodb+srv://kbteam02f_db_user:4g6JrOMpRm9iiPBc@cluster0.pwmudbx.mongodb.net/insight_hub_db?appName=Cluster0
 
 insighthub:
   markdown:
